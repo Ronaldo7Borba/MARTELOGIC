@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARTELOGIC</title>
-    <link rel="stylesheet" href="/WEB/CSS/style_index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Estoque</title>
+  <link rel="stylesheet" href="/WEB/CSS/style_index.css">
 </head>
 <body>
-    <section class="menu_lateral">
-        <aside class="menu">
-            <nav class="nav">
-                <ul class="list">
-                    <li><a href="#"><button>ÍNICIO</button></a></li>
-                    <li><a href=""><button>SAIR</button></a></li>
-                </ul>
-            </nav>
-        </aside>
-    </section>
-    <section class="hero">
 
-    </section>
+<aside class="sidebar">
+    <img src="/IMG/LOGO.png" alt="logo" class="logo">
+    <a href="/WEB/HTML/login.html"><button class="btn">SAIR</button></a>
+</aside >
 
+<main>
+    <div class="content">
+        <div class="menu-buttons">
+            <button onclick="mostrarArea('material')">ESTOQUE DE MATERIAL</button>
+            <button onclick="mostrarArea('estoque')">ESTOQUE</button>
+            <button onclick="mostrarArea('bruto')">BRUTO</button>
+            <button onclick="mostrarArea('entrada')">ENTRADA</button>
+        </div>
+    
+        <!-- Áreas expansíveis -->
+        <div id="material" class="expand-area">
+            <div class="search-bar">
+                <label>PRODUTO:</label>
+                <input type="text" placeholder="Digite o produto...">
+                <button>OK</button>
+            </div>
+            <table>
+                <tr><th>Item</th><th>Produto</th><th>Quantidade</th><th>Local</th></tr>
+                
+                <tr>
+                    <td>1</td>
+                    <td>Martelo</td>
+                    <td>
+                        <div class="quantity-field">
+                            <button onclick="alterarQtd(this, -1)">−</button>
+                            <input type="number" value="20" min="0">
+                            <button onclick="alterarQtd(this, 1)">+</button>
+                        </div>
+                    </td>
+                    <td>Estoque A</td>
+                </tr>
+            </table>
+        </div>
+    
+        <div id="estoque" class="expand-area">
+            <p>Aqui vai o conteúdo do estoque.</p>
+        </div>
+    
+        <div id="bruto" class="expand-area">
+            <p>Aqui vai o conteúdo bruto.</p>
+        </div>
+    
+        <div id="entrada" class="expand-area">
+            <p>Aqui vai o conteúdo de entrada.</p>
+        </div>
+    </div>
+</main>
 
+  <script src="/WEB/JAVASCRIPT/index.js"></script>
 </body>
 </html>
